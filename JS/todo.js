@@ -53,27 +53,50 @@ function removeItem(){
     }   
 }
 
-//Sorting function
-        //Solution provided by W3schools
-function sortList() {
-    var list, i, switching, b, shouldSwitch;
-    /* Div ID */
-    list = document.getElementById("list");
-    switching = true;
-    while (switching) {
-      switching = false;
-      /* Element tag */
-      b = list.getElementsByTagName("LI");
-      for (i = 0; i < (b.length - 1); i++) {
-        shouldSwitch = false;
-        if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
-          shouldSwitch = true;
-          break;
-        }
-      }
-      if (shouldSwitch) {
-        b[i].parentNode.insertBefore(b[i + 1], b[i]);
-        switching = true;
-      }
-    }
-  }
+let alphabetical = false
+
+// Thanks for this sorting solution Gustav :)
+function sortList   () {
+    let currentToDos = []
+    console.log(currentToDos)
+
+    const allListItems = document.querySelectorAll("LI")
+
+    allListItems.forEach(listEl => {
+        currentToDos.push(listEl.firstChild.textContent)
+    })
+
+    currentToDos.sort()
+
+    alphabetical = !alphabetical
+    !alphabetical ? currentToDos.reverse() : null
+        return currentToDos
+}
+
+
+    //  Sorting function
+    //  this looop idea was provided by W3schools - This sorting function gave me alot of problems so i tried to use 
+    //  the sorting function 2nd method you provided witch worked better
+
+//function sortList() {
+//    var list, i, switching, b, shouldSwitch;
+//    /* Div ID */
+//    list = document.getElementById("list");
+//    switching = true;
+//    while (switching) {
+//      switching = false;
+//      /* Element tag */
+//      b = list.getElementsByTagName("LI");
+//      for (i = 0; i < (b.length - 1); i++) {
+//        shouldSwitch = false;
+//        if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+//          shouldSwitch = true;
+//          break;
+//        }
+//      }
+//      if (shouldSwitch) {
+//        b[i].parentNode.insertBefore(b[i + 1], b[i]);
+//        switching = true;
+//      }
+//    }
+//  }
