@@ -41,7 +41,7 @@ var removeButton = document.getElementById('remove')
 //Listen for click    
 removeButton.addEventListener("click",removeItem)    
 
-//Funtion to remove item for LI
+//Funtion to remove item from LI
 function removeItem(){           
     li=ul.children
     for (let index = 0; index < li.length; index++) {   
